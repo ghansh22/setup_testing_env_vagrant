@@ -10,11 +10,5 @@ Vagrant.configure("2") do |config|
 #    lvm.storage :file, :size => '20G'
 #    lvm.storage :file, :size => '40G'
   end
-
-
-
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   apt-get update
-  #   apt-get install -y apache2
-  # SHELL
+  config.vm.provision "shell", path: "/home/light/lab/vagrant/bootstrap.sh"
 end
