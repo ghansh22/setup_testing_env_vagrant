@@ -6,5 +6,4 @@ sed -i "s/%wheel\tALL=(ALL)\tALL/# %wheel\tALL=(ALL)\tALL/g" /etc/sudoers
 sed -i "s/# %wheel\tALL=(ALL)\tNOPASSWD: ALL/%wheel\tALL=(ALL)\tNOPASSWD: ALL/g" /etc/sudoers
 
 service sshd restart
-
-yum -y install wget telnet java
+yum -y install wget telnet net-tools ping
