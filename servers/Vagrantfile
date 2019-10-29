@@ -1,0 +1,28 @@
+instances = 3
+box = "centos/7"
+provider = "virtualbox"
+name_prefix = "machine0"
+name_suffix = ".lab.com"
+ip_prefix = "192.168.22.10"
+memory = "518"
+cpus = "1"
+path = "/home/light/lab/vagrant/servers/bootstrap.sh"
+
+
+
+
+Vagrant.configure("2") do |config|
+  instances.times do |i|
+    node_id = "#{name_prefix}#{i}"
+    config.vm.define node_id do |node|
+      node.vm.box = "#{box}"
+      node.vm.hostname = "#{name_prefix}#{i}#{name_suffix}"
+      node.vm.network "private_network", ip: "#{ip_prefix}#{i}"
+      node.vm.provider "#{provider}" do |vm|
+        vm.memory = "#{memory}"
+        vm.cpus = "#{cpus}"
+      end
+      node.vm.provision "shell", path: "#{path}"
+    end
+  end
+end
