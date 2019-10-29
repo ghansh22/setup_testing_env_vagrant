@@ -5,5 +5,5 @@
 ```sh
 $ vagrant init
 $ vagrant up
-$ vagrant ssh
+$ ssh admin@192.168.33.10
 ```
