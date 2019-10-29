@@ -1,0 +1,10 @@
+---
+  instances: 3
+  box: centos/7
+  provider: virtualbox
+  name_prefix: machine0
+  name_suffix: .lab.com
+  ip_prefix: 192.168.22.10
+  memory: 518
+  cpus: 1
+  path: /home/light/lab/vagrant/servers/bootstrap.sh
